@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 
@@ -36,6 +36,10 @@ const fearsMantras = [
 
 
 export default function Fear() {
+
+    const [autoplay, setAutoplay] = useState(true)
+
+
     let count = 1;
     const renderedFearMantras = fearsMantras.map((mantra) => {
        return <div key={count} style={{backgroundImage: `url(/img/fear/${count +=1}.jpg)`}} >
@@ -48,10 +52,13 @@ export default function Fear() {
     return (
         <>
         <Hamburger />
+        <i class="fas fa-pause"></i>
+        <img 
+            onClick={() => setAutoplay(!autoplay)}
+            className="autoplay-icon" src={autoplay ? '/img/autoplay/pause-solid.svg' : '/img/autoplay/play-solid.svg'} alt=""/>
         <AutoplaySlider animation="cubeAnimation" 
-            cancelOnInteraction={true} // should stop playing on user interaction
-
-            play={true}
+            cancelOnInteraction={true} 
+            play={autoplay}
             interval={5000}
         >
             {renderedFearMantras}

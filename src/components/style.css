@@ -16,3 +16,19 @@ div {
   text-shadow: 2px 2px 4px #000000;
   line-height: 1;
 }
+.autoplay {
+  position: absolute;
+  right: 20px;
+  top: 45px;
+  color: #333;
+  z-index: 3;
+}
+.autoplay-icon {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 30px;
+  top: 65px;
+  color: #333;
+  z-index: 3;
+}

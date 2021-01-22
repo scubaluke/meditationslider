@@ -63,14 +63,14 @@ const NSFWMantras = [
 export default function NSFW() {
     let count = 0
     const renderedNSFWMantras = NSFWMantras.map(mantra => {
-        return <div style={{backgroundImage: `url(img/NSFW/${count += 1}.jpg)`}} >
+        return <div key={count} style={{backgroundImage: `url(img/NSFW/${count += 1}.jpg)`}} >
             <h1 className="title">{mantra}</h1>
         </div>
     })
     return (
         <>
        <Hamburger />
-        <AwesomeSlider animation="foldOutAnimation">
+        <AwesomeSlider animation="cubeAnimation">
             {renderedNSFWMantras}
         </AwesomeSlider>
         </>

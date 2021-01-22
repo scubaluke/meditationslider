@@ -6,7 +6,7 @@
 button.awssld_next {
   color: red;
 } */
-button {
+.awssld__next {
   color: red;
   background-color: rebeccapurple;
 }
