@@ -1,0 +1,18 @@
+div {
+  height: 100vh;
+  width: auto;
+  background-size: cover;
+  background-position: center;
+  /* background-attachment: scroll; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.title {
+  color: rgb(223, 222, 222);
+  font-size: 4em;
+  text-shadow: 2px 2px 4px #000000;
+  line-height: 1;
+}

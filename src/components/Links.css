@@ -1,0 +1,17 @@
+.list-of-links {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 200px;
+  z-index: 99999;
+}
+.link {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  transition: 350ms ease-in-out;
+}
+.link:hover {
+  color: rebeccapurple;
+  font-size: 1.1rem;
+}
