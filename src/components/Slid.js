@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 
@@ -6,10 +6,7 @@ import './style.css'
 import Hamburger from './Hamburger'
 
 
-export default function Slid({ animation, mantras, imgFolder, play, autoplay}) {
-    // const [autoplay, setAutoplay] = useState(true)
-
-    console.log(play);
+export default function Slid({ animation, mantras, imgFolder, play }) {
 
     let count = 0;
     const renderedMantras = mantras.map((mantra) => {
@@ -26,20 +23,18 @@ export default function Slid({ animation, mantras, imgFolder, play, autoplay}) {
            </div>
     })
 
+
     const AutoplaySlider = withAutoplay(AwesomeSlider);
 
     return (
         <>
-        <img 
-            onClick={autoplay}
-            className="autoplay-icon" src={play ? '/img/autoplay/pause-solid.svg' : '/img/autoplay/play-solid.svg'} alt=""
-        />
         <AutoplaySlider 
-            showTimer="true"
+            timerBackgroundColor='#0084ff'
+            // showTimer={true}
             customContent={ <Hamburger /> }
-            animation={animation} 
+            animation={animation}
             cancelOnInteraction={true} 
-            play={play}
+            play={true}
             interval={6000}
         >
             {renderedMantras}

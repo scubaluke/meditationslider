@@ -1,10 +1,8 @@
 .list-of-links {
   display: flex;
-  /* overflow: hidden; */
   height: 50px;
   z-index: 11;
   text-align: center;
-  /* background-color: rebeccapurple; */
 }
 .link {
   border: 1px solid #333;
@@ -25,4 +23,15 @@
   background-color: #929292b6;
   font-weight: bolder;
   box-shadow: 1px 1px 10px white;
+}
+/* @media only screen and (max-device-width: 400px) {
+  .list-of-links {
+    flex-wrap: wrap;
+  }
+} */
+
+@media (max-width: 560px) {
+  .list-of-links {
+    flex-wrap: wrap;
+  }
 }
