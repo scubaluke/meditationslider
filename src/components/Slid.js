@@ -6,15 +6,23 @@ import './style.css'
 import Hamburger from './Hamburger'
 
 
-export default function Slid({ mantras, imgFolder }) {
-    const [autoplay, setAutoplay] = useState(true)
+export default function Slid({ animation, mantras, imgFolder, play, autoplay}) {
+    // const [autoplay, setAutoplay] = useState(true)
 
-    console.log(mantras);
+    console.log(play);
 
     let count = 0;
-    const renderedFearMantras = mantras.map((mantra) => {
-       return <div key={count} style={{backgroundImage: `url(/img/${imgFolder}/${count +=1}.jpg)`}} >
-         <h1 className="title">{mantra}</h1>
+    const renderedMantras = mantras.map((mantra) => {
+       return <div 
+                    className="awssld__wrapper" 
+                    key={count} 
+                    style={{backgroundImage: `url(/img/${imgFolder}/${count +=1}.jpg)`}} 
+                >
+
+                <h1 className={`title ${mantra.display}`}>
+                    {mantra.title}
+                </h1>
+                <h2>{mantra.secondTitle}</h2>
            </div>
     })
 
@@ -22,16 +30,19 @@ export default function Slid({ mantras, imgFolder }) {
 
     return (
         <>
-        <Hamburger />
         <img 
-            onClick={() => setAutoplay(!autoplay)}
-            className="autoplay-icon" src={autoplay ? '/img/autoplay/pause-solid.svg' : '/img/autoplay/play-solid.svg'} alt=""/>
-        <AutoplaySlider animation="cubeAnimation" 
+            onClick={autoplay}
+            className="autoplay-icon" src={play ? '/img/autoplay/pause-solid.svg' : '/img/autoplay/play-solid.svg'} alt=""
+        />
+        <AutoplaySlider 
+            showTimer="true"
+            customContent={ <Hamburger /> }
+            animation={animation} 
             cancelOnInteraction={true} 
-            play={autoplay}
-            interval={5000}
+            play={play}
+            interval={6000}
         >
-            {renderedFearMantras}
+            {renderedMantras}
         </AutoplaySlider>
         </>
     )

@@ -32,10 +32,10 @@ const mantras = [
         'Reflect'
       ];
 
-export default function Mantra({props}) {
+export default function Mantra() {
  let count = 0;
 
-   const renderedMantra = props.map(mantra => {
+   const renderedMantra = mantras.map(mantra => {
        return <div className="hero" key={count} style={{backgroundImage: `url(/img/mantra/${count +=1}.jpg)`}} >
            <h1 className="title">{mantra}</h1>
        </div>

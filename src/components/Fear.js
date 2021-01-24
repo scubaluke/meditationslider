@@ -59,7 +59,7 @@ export default function Fear() {
         <AutoplaySlider animation="cubeAnimation" 
             cancelOnInteraction={true} 
             play={autoplay}
-            interval={5000}
+            interval={6000}
         >
             {renderedFearMantras}
         </AutoplaySlider>

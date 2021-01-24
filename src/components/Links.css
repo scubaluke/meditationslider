@@ -1,18 +1,28 @@
 .list-of-links {
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  height: 200px;
-  z-index: 99999;
+  /* overflow: hidden; */
+  height: 50px;
+  z-index: 11;
+  text-align: center;
   /* background-color: rebeccapurple; */
 }
 .link {
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: #383838dc;
+  height: 40px;
+  width: 100px;
+  margin: 10px;
   text-decoration: none;
-  color: #333;
-  padding: 10px;
+  color: white;
+  /* padding: 20px; */
   transition: 350ms ease-in-out;
+  /* box-shadow: 1px 1px 5px #333; */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 .link:hover {
   color: rebeccapurple;
-  font-size: 1.1rem;
+  background-color: #929292b6;
+  font-weight: bolder;
+  box-shadow: 1px 1px 10px white;
 }

@@ -1,20 +1,35 @@
-div {
-  height: 100vh;
-  width: auto;
-  background-size: cover;
-  background-position: center;
-  /* background-attachment: scroll; */
-
+.awssld__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+div {
+  background-size: cover;
+  background-position: center;
+}
+
 .title {
   color: rgb(223, 222, 222);
   font-size: 4em;
+  padding: 5%;
   text-shadow: 2px 2px 4px #000000;
   line-height: 1;
+  z-index: 11;
+}
+.box-title {
+  background-color: rgba(34, 34, 34, 0.959);
+  padding: 10px 25px;
+}
+.small-dark {
+  font-size: 1.4rem;
+  background-color: rgba(44, 44, 44, 0.932);
+  height: 40vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10%;
 }
 .autoplay {
   position: absolute;
@@ -31,4 +46,17 @@ div {
   top: 65px;
   color: #333;
   z-index: 3;
+}
+@media only screen and (max-device-width: 600px) {
+  .title {
+    color: rgb(223, 222, 222);
+    font-size: 2em;
+    padding: 5%;
+    text-shadow: 2px 2px 4px #000000;
+    line-height: 1;
+    z-index: 11;
+  }
+  .small-dark {
+    font-size: 1.3rem;
+  }
 }
