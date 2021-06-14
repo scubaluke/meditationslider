@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const colors = require('colors');
+console.log(process.env.mongoURI);
 
-const connectDB = async () => {
+module.exports = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
+    const conn = await mongoose.connect(process.env.mongoURI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true,
@@ -16,4 +17,3 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;

@@ -4,11 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('./services/passport');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
-mongoose.connect(process.env.mongoURI)
+// mongoose.connect(process.env.mongoURI)
 var app = express();
 require('./routes/authRoutes')(app);
+
+require('./services/connectDB')();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
