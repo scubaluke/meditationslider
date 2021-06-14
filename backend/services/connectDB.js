@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const colors = require('colors');
-console.log(process.env.mongoURI);
+require('colors');
 
 module.exports = async () => {
   try {

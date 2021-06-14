@@ -3,25 +3,33 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const passport = require('passport');
+const cookieSession = require('cookie-session');
+require('./models/User');
 require('./services/passport');
-// const mongoose = require('mongoose');
+require('./services/connectDB')();
 var indexRouter = require('./routes/index');
-// mongoose.connect(process.env.mongoURI)
 var app = express();
 require('./routes/authRoutes')(app);
 
-require('./services/connectDB')();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieSession({
+  maxAge: 30 * 24 * 60 * 60 * 1000,
+  keys: [process.env.cookieKey]
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
+// Routes
 app.use('/', indexRouter);
 
 
