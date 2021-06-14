@@ -10,7 +10,7 @@ module.exports = async () => {
       useCreateIndex: true,
       useFindAndModify: false,
     });
-    console.log(`MongoDB connected: ${conn.connection.host}`.rainbow.underline);
+    console.log(`MongoDB connected: ${conn.connection.host}`.magenta.bold.bgBlue);
   } catch (error) {
     console.error(`Error: ${error.message}`.red.underline.bold);
     process.exit(1);
