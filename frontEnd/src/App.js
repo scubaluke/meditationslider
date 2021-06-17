@@ -5,7 +5,7 @@ import 'react-awesome-slider/dist/custom-animations/fold-out-animation.css';
 import 'react-awesome-slider/dist/custom-animations/open-animation.css';
 import { HashRouter, Route, } from 'react-router-dom'
 import { mantras, fearsMantras, NSFWMantras, woaMantras } from './components/data'
-import Slide from './components/Slid'
+import Slide from './components/Slide'
 
 function App() {
   return (

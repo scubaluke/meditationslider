@@ -2,11 +2,13 @@ import React from 'react'
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 
+
 import './style.css'
 import Hamburger from './Hamburger'
 
 
-export default function Slid({ animation, mantras, imgFolder, play }) {
+export default function Slide({ animation, mantras, imgFolder, play }) {
+console.log(imgFolder);
 
     let count = 0;
     const renderedMantras = mantras.map((mantra) => {
